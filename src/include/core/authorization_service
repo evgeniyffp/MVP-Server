@@ -1,0 +1,2 @@
+#pragma once
+#include "../../modules/authorization_service_module/authorization_service.h"

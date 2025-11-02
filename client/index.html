@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTPS Сервер</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Веб-интерфейс HTTPS сервера</h1>
+            <p>Сервер: https://localhost:8443</p>
+        </header>
+
+        <div class="card">
+            <h2>Проверка соединения</h2>
+            <button id="pingBtn">Проверить соединение (Ping)</button>
+            <div id="pingStatus" class="status hidden"></div>
+        </div>
+
+        <div class="card">
+            <h2>Аутентификация</h2>
+            
+            <div class="tab-container">
+                <div class="tab active" data-tab="login">Вход</div>
+                <div class="tab" data-tab="register">Регистрация</div>
+            </div>
+            
+            <div id="loginTab" class="tab-content active">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Имя пользователя:</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль:</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit">Войти</button>
+                </form>
+                <div id="loginStatus" class="status hidden"></div>
+            </div>
+            
+            <div id="registerTab" class="tab-content">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Имя пользователя:</label>
+                        <input type="text" id="registerUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль:</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerRole">Роль:</label>
+                        <select id="registerRole" required>
+                            <option value="">Выберите роль</option>
+                            <option value="buyer">Покупатель</option>
+                            <option value="seller">Продавец</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="nameFieldGroup">
+                        <label id="nameLabel" for="registerName">Имя и фамилия:</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+                <div id="registerStatus" class="status hidden"></div>
+            </div>
+        </div>
+
+        <div class="card hidden" id="userSection">
+            <h2>Информация о пользователе</h2>
+            <div class="user-info">
+                <p>Вы успешно авторизованы!</p>
+                <p>Токен: <span id="userToken"></span></p>
+                <p>Роль: <span id="userRole"></span></p>
+                <p>Имя: <span id="userName"></span></p>
+            </div>
+            <button id="logoutBtn">Выйти</button>
+        </div>
+
+        <div class="card">
+            <h2>API Endpoints</h2>
+            <div class="endpoints">
+                <h3>Доступные методы:</h3>
+                <ul>
+                    <li><strong>GET /ping</strong> - Проверка работы сервера</li>
+                    <li><strong>POST /api/register</strong> - Регистрация пользователя</li>
+                    <li><strong>POST /api/login</strong> - Авторизация пользователя</li>
+                    <li><strong>GET /api</strong> - Основная информация API</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

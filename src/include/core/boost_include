@@ -1,0 +1,10 @@
+#pragma once
+
+#include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
+#include <boost/beast.hpp>
+
+namespace asio = boost::asio;
+namespace ssl = asio::ssl;
+namespace beast = boost::beast;
+using tcp = asio::ip::tcp;

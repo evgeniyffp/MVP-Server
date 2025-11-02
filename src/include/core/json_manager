@@ -1,0 +1,2 @@
+#pragma once
+#include "../../modules/json_manager_module/json_manager.h"

@@ -1,0 +1,24 @@
+{
+    "postgres" : {
+        "setting" : "dbname=sBeHappy password=postgres host=postgres user=postgres"
+    },
+    "server" : {
+        "port" : 8443,
+        "certificate_chain_file" : "server.crt",
+        "private_key_file" : "server.key",
+        "server_name" : "Boost.Asio SSL Server",
+        "CORS" : {
+            "Origin" : "*",
+            "Methods" : "GET, POST",
+            "Headers" : "Content-Type"
+        }
+    },
+    "authorization_service" : {
+        "user_table" : "users",
+        "user_logs_table" : "user_logs",
+        "jwt_server_name" : "jwt_manager for sBeHappy"
+    },
+    "marketplace" : {
+        "categories_table" : "categories"
+    }
+}
